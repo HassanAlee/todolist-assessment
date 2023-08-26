@@ -5,3 +5,9 @@ export const taskComplete = (id) => {
 export const addTodo = (data) => {
   return { type: type.ADD_TODO, payload: data };
 };
+export const editTodo = (id) => {
+  return { type: type.EDIT_TODO, payload: id };
+};
+export const updateTodo = (data) => {
+  return { type: type.UPDATE_TODO, payload: data };
+};

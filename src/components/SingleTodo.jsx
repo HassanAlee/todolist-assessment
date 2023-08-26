@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdOutlineDone } from "react-icons/md";
 import { TbEdit } from "react-icons/tb";
 import { useDispatch } from "react-redux";
-import { taskComplete } from "../redux/actions";
+import { taskComplete, editTodo } from "../redux/actions";
 const SingleTodo = ({ todo, date, description, info, id }) => {
   const dispatch = useDispatch();
   return (
@@ -15,7 +15,7 @@ const SingleTodo = ({ todo, date, description, info, id }) => {
         </p>
         <p>{info}</p>
         <div className="icons">
-          <span className="icon">
+          <span className="icon" onClick={() => dispatch(editTodo(id))}>
             <TbEdit />
           </span>
           <span className="icon" onClick={() => dispatch(taskComplete(id))}>

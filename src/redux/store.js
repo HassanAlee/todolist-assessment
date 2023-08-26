@@ -47,5 +47,6 @@ const initialState = {
     // You can add more objects here to represent additional tasks
   ],
   completedTodos: [],
+  isEditing: false,
 };
 export const store = createStore(reducer, initialState);
