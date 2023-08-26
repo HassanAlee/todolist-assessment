@@ -97,6 +97,7 @@ const AddTodo = () => {
         <div className="formCol">
           <textarea
             rows="4"
+            cols={"auto"}
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
