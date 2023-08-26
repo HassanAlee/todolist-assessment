@@ -11,3 +11,6 @@ export const editTodo = (id) => {
 export const updateTodo = (data) => {
   return { type: type.UPDATE_TODO, payload: data };
 };
+export const clearAll = (data) => {
+  return { type: type.CLEAR_ALL, payload: data };
+};

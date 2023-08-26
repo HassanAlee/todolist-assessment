@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import SingleTodo from "../components/SingleTodo";
+import { useDispatch } from "react-redux";
+import { clearAll } from "../redux/actions";
 const Completed = () => {
   const completedTodos = useSelector((state) => state.completedTodos);
-  console.log(completedTodos);
+  const dispatch = useDispatch();
   return (
     <>
       <div className="allTodos">
@@ -20,6 +21,12 @@ const Completed = () => {
           );
         })}
       </div>
+      <button
+        className="clearBtn"
+        onClick={() => dispatch(clearAll("completed"))}
+      >
+        clear all
+      </button>
     </>
   );
 };

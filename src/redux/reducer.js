@@ -57,5 +57,14 @@ export const reducer = (state, action) => {
       setIsEditing: false,
     };
   }
+  if (action.type === type.CLEAR_ALL) {
+    if (action.payload === "all") {
+      localStorage.setItem("todos", JSON.stringify([]));
+      return { ...state, allTodos: [] };
+    } else {
+      localStorage.setItem("completedTodos", JSON.stringify([]));
+      return { ...state, completedTodos: [] };
+    }
+  }
   return { ...state };
 };
