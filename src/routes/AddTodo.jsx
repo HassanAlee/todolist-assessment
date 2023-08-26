@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../redux/actions";
 const AddTodo = () => {
   const [todo, setTodo] = useState("");
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [info, setInfo] = useState("");
-  const name = useSelector((state) => state.name);
+  const dispatch = useDispatch();
   // submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +19,7 @@ const AddTodo = () => {
       description,
       info,
     };
-    console.log(newTodo);
+    dispatch(addTodo(newTodo));
   };
   return (
     <>

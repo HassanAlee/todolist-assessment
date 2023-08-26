@@ -13,5 +13,8 @@ export const reducer = (state, action) => {
       completedTodos: [...state.completedTodos, deletedTodo[0]],
     };
   }
+  if (action.type === type.ADD_TODO) {
+    return { ...state, allTodos: [...state.allTodos, action.payload] };
+  }
   return { ...state };
 };
