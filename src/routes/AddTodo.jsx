@@ -16,7 +16,7 @@ const AddTodo = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
-    if (toEdit) {
+    if (isEditing) {
       setEditId(toEdit.id);
       setTodo(toEdit.todo);
       setDate(toEdit.date);
