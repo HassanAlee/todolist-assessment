@@ -46,10 +46,6 @@ const AddTodo = () => {
           title: "Success",
           text: "Todo added successfully!",
         });
-        setTodo("");
-        setDate("");
-        setDescription("");
-        setInfo("");
       } else {
         const newTodo = {
           id: editId,
@@ -59,7 +55,16 @@ const AddTodo = () => {
           info: info.trim(),
         };
         dispatch(updateTodo(newTodo));
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Todo updated successfully!",
+        });
       }
+      setTodo("");
+      setDate("");
+      setDescription("");
+      setInfo("");
     }
   };
   return (

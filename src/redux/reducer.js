@@ -34,7 +34,7 @@ export const reducer = (state, action) => {
       }
       return item;
     });
-    return { ...state, allTodos: updatedTodos };
+    return { ...state, allTodos: updatedTodos, toEdit: {}, isEditing: false };
   }
   return { ...state };
 };
