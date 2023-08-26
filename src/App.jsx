@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import AddTodo from "./routes/AddTodo";
 import AllTodos from "./routes/AllTodos";
 import Completed from "./routes/Completed";
+import { createStore } from "redux";
+import { reducer } from "./redux/reducer";
 const App = () => {
   return (
     <>
@@ -16,5 +18,10 @@ const App = () => {
     </>
   );
 };
-
+const initialState = {
+  allTodos: [],
+  completedTodos: [],
+  isEditing: false,
+};
+export const store = createStore(reducer, initialState);
 export default App;
