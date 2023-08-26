@@ -18,9 +18,15 @@ const App = () => {
     </>
   );
 };
+const getTodos = () => {
+  return JSON.parse(localStorage.getItem("todos"));
+};
+const getCompletedTodos = () => {
+  return JSON.parse(localStorage.getItem("completedTodos"));
+};
 const initialState = {
-  allTodos: [],
-  completedTodos: [],
+  allTodos: getTodos() || [],
+  completedTodos: getCompletedTodos() || [],
   isEditing: false,
 };
 export const store = createStore(reducer, initialState);

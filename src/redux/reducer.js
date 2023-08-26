@@ -7,6 +7,11 @@ export const reducer = (state, action) => {
     const newTodos = state.allTodos.filter(
       (item) => item.id !== action.payload
     );
+    localStorage.setItem(
+      "completedTodos",
+      JSON.stringify([...state.completedTodos, deletedTodo[0]])
+    );
+    localStorage.setItem("todos", JSON.stringify(newTodos));
     return {
       ...state,
       allTodos: newTodos,
@@ -14,6 +19,10 @@ export const reducer = (state, action) => {
     };
   }
   if (action.type === type.ADD_TODO) {
+    localStorage.setItem(
+      "todos",
+      JSON.stringify([...state.allTodos, action.payload])
+    );
     return { ...state, allTodos: [...state.allTodos, action.payload] };
   }
   if (action.type === type.EDIT_TODO) {
@@ -34,6 +43,7 @@ export const reducer = (state, action) => {
       }
       return item;
     });
+    localStorage.setItem("todos", JSON.stringify(updatedTodos));
     return { ...state, allTodos: updatedTodos, toEdit: {}, isEditing: false };
   }
   return { ...state };
