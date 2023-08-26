@@ -197,6 +197,26 @@ justify-content: center;
   color: #130f40;
   text-align: center;
 }
+.lost{
+  text-decoration: none;
+  margin: auto;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+.lost a{
+  text-decoration: none;
+  background-color: #60A3BC;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: all .5s ease-in-out;
+}
+.lost a:hover{
+  background-color: #4a69bd;
+}
 @media(max-width:600px){
   .formRow{
     flex-direction: column;

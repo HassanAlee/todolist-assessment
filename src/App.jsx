@@ -6,6 +6,7 @@ import AllTodos from "./routes/AllTodos";
 import Completed from "./routes/Completed";
 import { createStore } from "redux";
 import { reducer } from "./redux/reducer";
+import Error from "./components/Error";
 const App = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<AddTodo />} />
         <Route path="/all" element={<AllTodos />} />
         <Route path="/completed" element={<Completed />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );
