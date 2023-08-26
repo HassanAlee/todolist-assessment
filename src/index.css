@@ -151,3 +151,10 @@ margin-top: 1rem;
 .icon:last-child{
   color: #eb2f06;
 }
+.allTodos .completedTodo{
+  background-color: #6ab04c;
+  color: #f9ca24 !important;
+}
+.completedTodo h5{
+  color: #f9ca24;
+}

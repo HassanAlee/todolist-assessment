@@ -18,7 +18,7 @@ const SingleTodo = ({ todo, date, description, info, id }) => {
           <span className="icon">
             <TbEdit />
           </span>
-          <span className="icon" onClick={() => dispatch(taskComplete())}>
+          <span className="icon" onClick={() => dispatch(taskComplete(id))}>
             <MdOutlineDone />
           </span>
         </div>
