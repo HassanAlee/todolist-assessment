@@ -24,21 +24,21 @@ const initialState = {
       info: "Important business presentation",
     },
     {
-      id: 3,
+      id: 4,
       todo: "Prepare presentation",
       date: "2023-08-28",
       description: "Gather data and create slides for the client presentation",
       info: "Important business presentation",
     },
     {
-      id: 3,
+      id: 5,
       todo: "Prepare presentation",
       date: "2023-08-28",
       description: "Gather data and create slides for the client presentation",
       info: "Important business presentation",
     },
     {
-      id: 3,
+      id: 6,
       todo: "Prepare presentation",
       date: "2023-08-28",
       description: "Gather data and create slides for the client presentation",
@@ -47,6 +47,5 @@ const initialState = {
     // You can add more objects here to represent additional tasks
   ],
   completedTodos: [],
-  name: "Hassan",
 };
 export const store = createStore(reducer, initialState);

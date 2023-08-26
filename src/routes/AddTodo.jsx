@@ -22,7 +22,7 @@ const AddTodo = () => {
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
-        <h4>{name ? name : "hehehe"}</h4>
+        <h4>add new todo</h4>
         <div className="formRow">
           <div className="formField">
             <input

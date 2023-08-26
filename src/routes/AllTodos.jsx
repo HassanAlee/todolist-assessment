@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import SingleTodo from "../components/SingleTodo";
-
 const AllTodos = () => {
   const allTodos = useSelector((state) => state.allTodos);
   return (
