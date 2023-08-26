@@ -23,6 +23,27 @@ const initialState = {
       description: "Gather data and create slides for the client presentation",
       info: "Important business presentation",
     },
+    {
+      id: 3,
+      todo: "Prepare presentation",
+      date: "2023-08-28",
+      description: "Gather data and create slides for the client presentation",
+      info: "Important business presentation",
+    },
+    {
+      id: 3,
+      todo: "Prepare presentation",
+      date: "2023-08-28",
+      description: "Gather data and create slides for the client presentation",
+      info: "Important business presentation",
+    },
+    {
+      id: 3,
+      todo: "Prepare presentation",
+      date: "2023-08-28",
+      description: "Gather data and create slides for the client presentation",
+      info: "Important business presentation",
+    },
     // You can add more objects here to represent additional tasks
   ],
   completedTodos: [],
