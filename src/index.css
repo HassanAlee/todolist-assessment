@@ -179,3 +179,15 @@ transition: all .5s ease-in-out;
   color: #fff;
   border: none;
 }
+.placeholder{
+height: 50vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.placeholder h1{
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #130f40;
+  text-align: center;
+}

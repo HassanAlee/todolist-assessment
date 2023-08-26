@@ -7,26 +7,36 @@ const Completed = () => {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="allTodos">
-        {completedTodos.map((item) => {
-          return (
-            <>
-              <article key={item.id} className="singleTodo completedTodo">
-                <h5 style={{ textDecoration: "line-through" }}>{item.todo}</h5>
-                <p>{item.date}</p>
-                {/* <p>{item.description}</p>
+      {completedTodos.length > 0 ? (
+        <div className="allTodos">
+          {completedTodos.map((item) => {
+            return (
+              <>
+                <article key={item.id} className="singleTodo completedTodo">
+                  <h5 style={{ textDecoration: "line-through" }}>
+                    {item.todo}
+                  </h5>
+                  <p>{item.date}</p>
+                  {/* <p>{item.description}</p>
                 <p>{item.info}</p> */}
-              </article>
-            </>
-          );
-        })}
-      </div>
-      <button
-        className="clearBtn"
-        onClick={() => dispatch(clearAll("completed"))}
-      >
-        clear all
-      </button>
+                </article>
+              </>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="placeholder">
+          <h1>looks like the list is empty!!!</h1>
+        </div>
+      )}
+      {completedTodos.length > 0 && (
+        <button
+          className="clearBtn"
+          onClick={() => dispatch(clearAll("completed"))}
+        >
+          clear all
+        </button>
+      )}
     </>
   );
 };
