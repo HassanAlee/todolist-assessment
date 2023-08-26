@@ -24,10 +24,10 @@ const SingleTodo = ({ todo, date, description, info, id }) => {
               navigate("/");
             }}
           >
-            <TbEdit />
+            <TbEdit className="editIcon" />
           </span>
           <span className="icon" onClick={() => dispatch(taskComplete(id))}>
-            <MdOutlineDone />
+            <MdOutlineDone className="deleteIcon" />
           </span>
         </div>
       </article>
