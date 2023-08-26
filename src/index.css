@@ -197,7 +197,23 @@ justify-content: center;
   color: #130f40;
   text-align: center;
 }
+@media(max-width:600px){
+  .formRow{
+    flex-direction: column;
+    
+  }
+  .formField{
+    width: 100% !important;
+    margin-top: 2rem;
+  }
+  .formField input{
+    width: 100%;
+  }
+}
 @media(max-width:500px){
+  .form{
+    width: 90%;
+  }
 .singleTodo{
   width: 100%;
   margin-left: auto;
