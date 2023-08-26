@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { useSelector } from "react-redux";
 const AddTodo = () => {
   const [todo, setTodo] = useState("");
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [info, setInfo] = useState("");
+  const name = useSelector((state) => state.name);
   // submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const AddTodo = () => {
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
-        <h4>add new todo</h4>
+        <h4>{name ? name : "hehehe"}</h4>
         <div className="formRow">
           <div className="formField">
             <input
