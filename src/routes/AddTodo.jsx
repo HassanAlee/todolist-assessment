@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addTodo, updateTodo } from "../redux/actions";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 const AddTodo = () => {
   const [todo, setTodo] = useState("");
@@ -13,6 +14,7 @@ const AddTodo = () => {
   const isEditing = useSelector((state) => state.isEditing);
   const toEdit = useSelector((state) => state.toEdit);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     if (toEdit) {
       setEditId(toEdit.id);
@@ -65,6 +67,7 @@ const AddTodo = () => {
       setDate("");
       setDescription("");
       setInfo("");
+      navigate("/all");
     }
   };
   return (

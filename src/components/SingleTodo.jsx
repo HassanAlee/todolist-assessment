@@ -3,8 +3,10 @@ import { MdOutlineDone } from "react-icons/md";
 import { TbEdit } from "react-icons/tb";
 import { useDispatch } from "react-redux";
 import { taskComplete, editTodo } from "../redux/actions";
+import { useNavigate } from "react-router-dom";
 const SingleTodo = ({ todo, date, description, info, id }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <>
       <article className="singleTodo">
@@ -15,7 +17,13 @@ const SingleTodo = ({ todo, date, description, info, id }) => {
         </p>
         <p>{info}</p>
         <div className="icons">
-          <span className="icon" onClick={() => dispatch(editTodo(id))}>
+          <span
+            className="icon"
+            onClick={() => {
+              dispatch(editTodo(id));
+              navigate("/");
+            }}
+          >
             <TbEdit />
           </span>
           <span className="icon" onClick={() => dispatch(taskComplete(id))}>
