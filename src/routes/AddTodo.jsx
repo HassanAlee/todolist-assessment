@@ -3,6 +3,7 @@ import { v4 as uuid } from "uuid";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/actions";
+import Swal from "sweetalert2";
 const AddTodo = () => {
   const [todo, setTodo] = useState("");
   const [date, setDate] = useState("");
@@ -14,12 +15,29 @@ const AddTodo = () => {
     e.preventDefault();
     const newTodo = {
       id: uuid(),
-      todo,
-      date,
-      description,
-      info,
+      todo: todo.trim(),
+      date: date.trim(),
+      description: description,
+      info: info.trim(),
     };
-    dispatch(addTodo(newTodo));
+    if (todo === "" || date === "" || description === "" || info === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "All fields are mandatory!",
+      });
+    } else {
+      dispatch(addTodo(newTodo));
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Todo added successfully!",
+      });
+      setTodo("");
+      setDate("");
+      setDescription("");
+      setInfo("");
+    }
   };
   return (
     <>
